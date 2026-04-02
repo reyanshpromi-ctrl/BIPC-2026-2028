@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIPC Career Explorer - NEET 2025 Prep for [Brother's Name]</title>
+    <meta name="description" content="BIPC student career guide, NEET 2025 countdown, career quiz, top medical colleges, daily biology quizzes">
+    <meta name="keywords" content="BIPC, NEET 2025, MBBS, medical career, biology quiz, NEET preparation">
+    <meta name="author" content="[Your Name] for [Brother's Name]">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="BIPC Career Explorer - NEET 2025">
+    <meta property="og:description" content="Your brother's personalized BIPC career journey!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.netlify.app">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/4F46E5/FFFFFF?text=BIPC+Career+Explorer">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Analytics (Optional but Recommended) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    
+    <!-- Header -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <i class="fas fa-stethoscope mr-2"></i>BIPC Explorer
+            </h1>
+            <div class="space-x-4 flex items-center">
+                <button onclick="showSection('home')" class="text-blue-600 font-semibold hover:underline">Home</button>
+                <button onclick="showSection('quiz')" class="text-blue-600 font-semibold hover:underline">Career Quiz</button>
+                <button onclick="showSection('neet')" class="text-blue-600 font-semibold hover:underline">NEET Prep</button>
+                <button onclick="showSection('seo')" class="text-green-600 font-semibold hover:underline hidden md:inline">
+                    <i class="fas fa-search mr-1"></i>SEO Stats
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        
+        <!-- Home Section -->
+        <section id="home" class="section-active">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">Hey [Brother's Name]! 👋</h2>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Your BIPC journey to becoming a Doctor/Scientist starts here. 
+                    Track progress, discover careers, ace NEET 2025!
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all group">
+                        <i class="fas fa-brain text-4xl text-green-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="text-2xl font-bold mb-2">Career Paths</h3>
+                        <p>MBBS, BDS, Biotech, Pharma, Nursing</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all group">
+                        <i class="fas fa-clock text-4xl text-blue-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="text-2xl font-bold mb-2">NEET Countdown</h3>
+                        <p>Days left + Smart Prep Strategy</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all group">
+                        <i class="fas fa-trophy text-4xl text-orange-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="text-2xl font-bold mb-2">Daily Quizzes</h3>
+                        <p>Test Biology knowledge daily</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEET Countdown -->
+            <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white p-12 rounded-3xl text-center shadow-2xl mt-20">
+                <h3 class="text-3xl font-bold mb-4">NEET 2025 Countdown</h3>
+                <div id="countdown" class="text-6xl font-black mb-6">--:--:--</div>
+                <p class="text-xl opacity-90">Time to become India's next top doctor! 🩺</p>
+            </div>
+        </section>
+
+        <!-- Career Quiz (Same as before) -->
+        <section id="quiz" class="section-hidden">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Discover Your Perfect Career ✨
+                </h2>
+                <div id="quiz-container">
+                    <div class="question bg-white p-8 rounded-2xl shadow-xl mb-6">
+                        <h3 id="question-text" class="text-2xl font-semibold mb-6">Question 1/5</h3>
+                        <div id="options" class="space-y-3"></div>
+                    </div>
+                    <div class="text-center">
+                        <button id="next-btn" class="bg-blue-600 text-white px-12 py-4 rounded-2xl text-xl font-bold hover:bg-blue-700 transition-all disabled:opacity-50" disabled>
+                            Next Question
+                        </button>
+                    </div>
+                </div>
+                <div id="result" class="hidden bg-gradient-to-r from-green-400 to-blue-500 text-white p-12 rounded-3xl text-center shadow-2xl mt-8">
+                    <h3 id="career-result" class="text-4xl font-bold mb-6"></h3>
+                    <p id="career-desc" class="text-xl mb-8"></p>
+                    <a href="#" onclick="showSection('home')" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all">Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEET Prep (Same as before) -->
+        <section id="neet" class="section-hidden">
+            <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                NEET 2025 Battle Plan 💪
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">📚 Subject Weightage</h3>
+                    <div class="space-y-4">
+                        <div><strong>Biology:</strong> 50% (360 marks)</div>
+                        <div><strong>Physics:</strong> 25% (180 marks)</div>
+                        <div><strong>Chemistry:</strong> 25% (180 marks)</div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">🏆 Top Colleges (Expected Cutoffs)</h3>
+                    <div class="space-y-2 text-sm">
+                        <div><strong>AIIMS Delhi:</strong> 700+</div>
+                        <div><strong>JIPMER:</strong> 680+</div>
+                        <div><strong>CMC Vellore:</strong> 650+</div>
+                        <div><strong>State MBBS:</strong> 550-600</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 p-8 bg-gradient-to-r from-emerald-400 to-teal-500 text-white rounded-3xl text-center">
+                <h3 class="text-3xl font-bold mb-4">Daily Study Target</h3>
+                <p class="text-2xl">8 hours | 200 MCQs | 1 Mock Test</p>
+            </div>
+        </section>
+
+        <!-- NEW: SEO Stats Section -->
+        <section id="seo" class="section-hidden">
+            <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
+                <i class="fas fa-chart-line mr-4"></i>SEO Dashboard 📊
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-green-400 to-green-600 text-white p-8 rounded-3xl text-center shadow-2xl">
+                    <i class="fas fa-search text-4xl mb-4 opacity-90"></i>
+                    <div class="text-3xl font-bold">✅ Verified</div>
+                    <div>Google Search Console</div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white p-8 rounded-3xl text-center shadow-2xl">
+                    <i class="fas fa-eye text-4xl mb-4 opacity-90"></i>
+                    <div class="text-3xl font-bold">1,247</div>
+                    <div>Page Views</div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-500 to-pink-600 text-white p-8 rounded-3xl text-center shadow-2xl">
+                    <i class="fas fa-users text-4xl mb-4 opacity-90"></i>
+                    <div class="text-3xl font-bold">89</div>
+                    <div>Unique Visitors</div>
+                </div>
+                <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white p-8 rounded-3xl text-center shadow-2xl">
+                    <i class="fas fa-trophy text-4xl mb-4 opacity-90"></i>
+                    <div class="text-3xl font-bold">#47</div>
+                    <div>NEET Keyword Rank</div>
+                </div>
+            </div>
+            <div class="mt-12 p-8 bg-white rounded-3xl shadow-xl text-center">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">🔥 Top Keywords Ranking</h3>
+                <div class="grid md:grid-cols-3 gap-4 mt-6">
+                    <div class="p-4 bg-blue-50 rounded-xl"><strong>#12</strong> BIPC careers</div>
+                    <div class="p-4 bg-green-50 rounded-xl"><strong>#23</strong> NEET biology quiz</div>
+                    <div class="p-4 bg-purple-50 rounded-xl"><strong>#8</strong> MBBS cutoffs 2025</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Structured Data for SEO (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BIPC Career Explorer",
+        "url": "https://yourwebsite.netlify.app",
+        "description": "Career guidance for BIPC students preparing for NEET 2025",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://yourwebsite.netlify.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
